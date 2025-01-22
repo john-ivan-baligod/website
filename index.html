@@ -9,31 +9,31 @@
    
     function goHome() {
       alert('Navigating to Home!');
-      
     }
 
     function createPin() {
-      alert('Opening pin creation page...');
-      
+      document.getElementById("pinModal").classList.remove("hidden");
+    }
+
+    function closeModal() {
+      document.getElementById("pinModal").classList.add("hidden");
     }
 
     function toggleNotifications() {
       alert('Showing notifications...');
-      
     }
 
     function openMessages() {
       alert('Opening message inbox...');
-      
     }
 
     function viewProfile() {
       alert('Opening profile...');
-     
     }
   </script>
  </head>
  <body class="bg-gray-100">
+  
   
   <nav class="bg-white shadow-md p-4 flex items-center justify-between">
    <div class="flex items-center space-x-4">
@@ -62,17 +62,148 @@
     </div>
    </div>
   </nav>
+
+
+  <div id="pinModal" class="hidden fixed inset-0 bg-gray-800 bg-opacity-50 flex items-center justify-center">
+    <div class="bg-white p-6 rounded-lg w-1/3">
+      <h2 class="text-xl font-semibold mb-4">Create a New Pin</h2>
+      <input type="text" class="border p-2 w-full mb-4 rounded" placeholder="Enter Pin Title" />
+      <input type="url" class="border p-2 w-full mb-4 rounded" placeholder="Enter Image URL" />
+      <textarea class="border p-2 w-full mb-4 rounded" placeholder="Enter Pin Description"></textarea>
+      <button class="bg-black text-white px-4 py-2 rounded-full mb-4 w-full">Create Pin</button>
+      <button onclick="closeModal()" class="bg-red-500 text-white px-4 py-2 rounded-full w-full">Close</button>
+    </div>
+  </div>
   
   
   <div class="p-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-   <img alt="Scenic mountain landscape with a waterfall" class="rounded-lg" height="500" src="https://storage.googleapis.com/a1aa/image/xDbshVHaafVfK0MgFlNV2fPdgMCyJlB6Dy8ct6BzUlhqRedQB.jpg" width="300"/>
-   <img alt="Artistic clouds in a starry night sky" class="rounded-lg" height="500" src="https://storage.googleapis.com/a1aa/image/E8zb1d6qkwpHDpVSNZhY24plv3ufyPT28hNug3vHe2YyIfOoA.jpg" width="300"/>
-   <img alt="Motivational quote: 'Push yourself, because no one else will.'" class="rounded-lg" height="500" src="https://storage.googleapis.com/a1aa/image/55UeeZP3Cuid00MsKOMvjGvTytqfGTFcpaDU2bcHXWJ1RedQB.jpg" width="300"/>
-   <img alt="Scenic view of a lake and mountains from a wooden porch" class="rounded-lg" height="500" src="https://storage.googleapis.com/a1aa/image/Z7Z2ifzg6H2LICDZTLerj1DqeBPd8Zm1B6F90tI8boYhRedQB.jpg" width="300"/>
-   <img alt="Top view of a vintage car on a red and white striped road" class="rounded-lg" height="500" src="https://storage.googleapis.com/a1aa/image/ivT1qvjb0pIXBJL5t1IZiidvm9dRVjUcfNkb3CmXhVnZkvDKA.jpg" width="300"/>
-   <img alt="Various bags of coffee beans on display" class="rounded-lg" height="500" src="https://storage.googleapis.com/a1aa/image/Z9fYzYl4JcyNK6lZ6qfeKucGwjH2Wzfeacne3QvXebek4IfOoA.jpg" width="300"/>
-   <img alt="Artistic depiction of clouds in a blue sky" class="rounded-lg" height="500" src="https://storage.googleapis.com/a1aa/image/NOjEiHO8eGS2Zycf7YUHBWxbqdNWYrB3HnvOQJQSVHsuIfOoA.jpg" width="300"/>
-   <img alt="Poster with text 'Retro'" height="400" src="https://storage.googleapis.com/a1aa/image/et7K9t8eVdh5BUdE5OTffzviGRkwPIJpZa0bIaLcvAVz88dQB.jpg" width="300"/>
+  
+   <div class="relative group">
+     <img alt="Scenic mountain landscape with a waterfall" class="rounded-lg transition-transform transform group-hover:scale-110" height="500" src="https://storage.googleapis.com/a1aa/image/xDbshVHaafVfK0MgFlNV2fPdgMCyJlB6Dy8ct6BzUlhqRedQB.jpg" width="300"/>
+     <div class="absolute top-0 left-0 w-full h-full bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+       <a href="https://www.facebook.com/sharer/sharer.php?u=https://storage.googleapis.com/a1aa/image/xDbshVHaafVfK0MgFlNV2fPdgMCyJlB6Dy8ct6BzUlhqRedQB.jpg" target="_blank" class="text-white text-xl p-2 bg-blue-600 rounded-full">
+         <i class="fab fa-facebook"></i> Share
+       </a>
+     </div>
+   </div>
+   
+   
+   <div class="relative group">
+     <img alt="Artistic clouds in a starry night sky" class="rounded-lg transition-transform transform group-hover:scale-110" height="500" src="https://storage.googleapis.com/a1aa/image/E8zb1d6qkwpHDpVSNZhY24plv3ufyPT28hNug3vHe2YyIfOoA.jpg" width="300"/>
+     <div class="absolute top-0 left-0 w-full h-full bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+       <a href="https://www.facebook.com/sharer/sharer.php?u=https://storage.googleapis.com/a1aa/image/E8zb1d6qkwpHDpVSNZhY24plv3ufyPT28hNug3vHe2YyIfOoA.jpg" target="_blank" class="text-white text-xl p-2 bg-blue-600 rounded-full">
+         <i class="fab fa-facebook"></i> Share
+       </a>
+     </div>
+   </div>
+   
+ 
+   <div class="relative group">
+     <img alt="Motivational quote: 'Push yourself, because no one else will.'" class="rounded-lg transition-transform transform group-hover:scale-110" height="500" src="https://storage.googleapis.com/a1aa/image/55UeeZP3Cuid00MsKOMvjGvTytqfGTFcpaDU2bcHXWJ1RedQB.jpg" width="300"/>
+     <div class="absolute top-0 left-0 w-full h-full bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+       <a href="https://www.facebook.com/sharer/sharer.php?u=https://storage.googleapis.com/a1aa/image/55UeeZP3Cuid00MsKOMvjGvTytqfGTFcpaDU2bcHXWJ1RedQB.jpg" target="_blank" class="text-white text-xl p-2 bg-blue-600 rounded-full">
+         <i class="fab fa-facebook"></i> Share
+       </a>
+     </div>
+   </div>
+
+  
+   <div class="relative group">
+     <img alt="Scenic view of a lake and mountains from a wooden porch" class="rounded-lg transition-transform transform group-hover:scale-110" height="500" src="https://storage.googleapis.com/a1aa/image/Z7Z2ifzg6H2LICDZTLerj1DqeBPd8Zm1B6F90tI8boYhRedQB.jpg" width="300"/>
+     <div class="absolute top-0 left-0 w-full h-full bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+       <a href="https://www.facebook.com/sharer/sharer.php?u=https://storage.googleapis.com/a1aa/image/Z7Z2ifzg6H2LICDZTLerj1DqeBPd8Zm1B6F90tI8boYhRedQB.jpg" target="_blank" class="text-white text-xl p-2 bg-blue-600 rounded-full">
+         <i class="fab fa-facebook"></i> Share
+       </a>
+     </div>
+   </div>
+
+   
+   <div class="relative group">
+    <img alt="Top view of a vintage car on a red and white striped road" class="rounded-lg transition-transform transform group-hover:scale-110" height="500" src="https://storage.googleapis.com/a1aa/image/ivT1qvjb0pIXBJL5t1IZiidvm9dRVjUcfNkb3CmXhVnZkvDKA.jpg" width="300"/>
+    <div class="absolute top-0 left-0 w-full h-full bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+      <a href="https://www.facebook.com/sharer/sharer.php?u=https://storage.googleapis.com/a1aa/image/ivT1qvjb0pIXBJL5t1IZiidvm9dRVjUcfNkb3CmXhVnZkvDKA.jpg" target="_blank" class="text-white text-xl p-2 bg-blue-600 rounded-full">
+        <i class="fab fa-facebook"></i> Share
+      </a>
+    </div>
   </div>
- </body>
-</html>
+
+  <div class="relative group">
+    <img alt="Bouquets of flowers in buckets" class="rounded-lg" height="400" src="https://storage.googleapis.com/a1aa/image/f5VaC7zlzekTfpI0oK7TlbDTCsxs0zeBmEEzyijd2eyz4T8gC.jpg" width="300"/>    
+    <div class="absolute top-0 left-0 w-full h-full bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+      <a href="https://www.facebook.com/sharer/sharer.php?u=https://storage.googleapis.com/a1aa/image/ivT1qvjb0pIXBJL5t1IZiidvm9dRVjUcfNkb3CmXhVnZkvDKA.jpg" target="_blank" class="text-white text-xl p-2 bg-blue-600 rounded-full">
+        <i class="fab fa-facebook"></i> Share
+      </a>
+    </div>
+  </div>
+
+
+  <div class="relative group">
+   
+    <img alt="Poster with a frog and text 'It's not that deep'" class="rounded-lg" height="400" src="https://storage.googleapis.com/a1aa/image/8alSieMV621bBSA2xzOe2Un2GrqC3eS4bYxBcDWYabdIeJegC.jpg" width="300"/>
+    <div class="absolute top-0 left-0 w-full h-full bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+      <a href="https://www.facebook.com/sharer/sharer.php?u=https://storage.googleapis.com/a1aa/image/ivT1qvjb0pIXBJL5t1IZiidvm9dRVjUcfNkb3CmXhVnZkvDKA.jpg" target="_blank" class="text-white text-xl p-2 bg-blue-600 rounded-full">
+        <i class="fab fa-facebook"></i> Share
+      </a>
+    </div>
+  </div>
+
+
+  <div class="relative group">
+    
+    <img alt="Cat lying on grass with flowers" class="rounded-lg" height="400" src="https://storage.googleapis.com/a1aa/image/MX7IspLhCPZsE9k97PoQyPA6Kjf4hsNejeDLRfqZaSnD8JegC.jpg" width="300"/>
+    <div class="absolute top-0 left-0 w-full h-full bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+      <a href="https://www.facebook.com/sharer/sharer.php?u=https://storage.googleapis.com/a1aa/image/ivT1qvjb0pIXBJL5t1IZiidvm9dRVjUcfNkb3CmXhVnZkvDKA.jpg" target="_blank" class="text-white text-xl p-2 bg-blue-600 rounded-full">
+        <i class="fab fa-facebook"></i> Share
+      </a>
+    </div>
+  </div>
+  
+
+  <div class="relative group">
+    
+    <img alt="Scenic view with blue sky and tree" class="rounded-lg" height="400" src="https://storage.googleapis.com/a1aa/image/Oo4Il2MwrS4rEpdQbd8jOu3aNbWvks5eM7rA7Rqf4DjHfEPoA.jpg" width="300"/>
+    <div class="absolute top-0 left-0 w-full h-full bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+      <a href="https://www.facebook.com/sharer/sharer.php?u=https://storage.googleapis.com/a1aa/image/ivT1qvjb0pIXBJL5t1IZiidvm9dRVjUcfNkb3CmXhVnZkvDKA.jpg" target="_blank" class="text-white text-xl p-2 bg-blue-600 rounded-full">
+        <i class="fab fa-facebook"></i> Share
+      </a>
+    </div>
+  </div>
+
+  <div class="relative group">
+    
+    <img alt="Color swatches with text 'Earth' and 'Moss'" class="rounded-lg" height="400" src="https://storage.googleapis.com/a1aa/image/70eiu9hs4MW8YSI87tS5M2wzexwWQDTvA183gla3EP3e9EPoA.jpg" width="300"/>
+    <div class="absolute top-0 left-0 w-full h-full bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+      <a href="https://www.facebook.com/sharer/sharer.php?u=https://storage.googleapis.com/a1aa/image/ivT1qvjb0pIXBJL5t1IZiidvm9dRVjUcfNkb3CmXhVnZkvDKA.jpg" target="_blank" class="text-white text-xl p-2 bg-blue-600 rounded-full">
+        <i class="fab fa-facebook"></i> Share
+      </a>
+    </div>
+  </div>
+
+  <div class="relative group">
+    <img alt="Poster with text 'Retro'" class="rounded-lg" height="400" src="https://storage.googleapis.com/a1aa/image/IQKfLFHed6ksnUUgqQf9fBgzmHlg6gjRgnsD8HEzNQ7r7JegC.jpg" width="300"/>
+    
+    <div class="absolute top-0 left-0 w-full h-full bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+      <a href="https://www.facebook.com/sharer/sharer.php?u=https://storage.googleapis.com/a1aa/image/ivT1qvjb0pIXBJL5t1IZiidvm9dRVjUcfNkb3CmXhVnZkvDKA.jpg" target="_blank" class="text-white text-xl p-2 bg-blue-600 rounded-full">
+        <i class="fab fa-facebook"></i> Share
+      </a>
+    </div>
+  </div>
+
+  <div class="relative group">
+    <img alt="Scenic view from a balcony with mountains" class="w-full" height="500" src="https://storage.googleapis.com/a1aa/image/D3BnNr4h8BIpBlXnJOF7r1p8pfdVcmTc3f4R18E91BIrriHUA.jpg" width="300"/>
+    
+    <div class="absolute top-0 left-0 w-full h-full bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+      <a href="https://www.facebook.com/sharer/sharer.php?u=https://storage.googleapis.com/a1aa/image/ivT1qvjb0pIXBJL5t1IZiidvm9dRVjUcfNkb3CmXhVnZkvDKA.jpg" target="_blank" class="text-white text-xl p-2 bg-blue-600 rounded-full">
+        <i class="fab fa-facebook"></i> Share
+      </a>
+    </div>
+  </div>
+    
+  
+    
+     
+     
+     
+     
+ 
+ 
